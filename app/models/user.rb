@@ -7,8 +7,10 @@ class User < ApplicationRecord
   has_many :questions
 
   validates :email, :username, presence: true
-
   validates :email, :username, uniqueness: true
+  validates :email, format: { with: /\A[\w\d]+[\w\d.]+@[\w\d]+\.[\w]+/ }
+  validates :username, length: { maximum: 40 }
+  validates :username, format: { with: /[a-zA-Z\d_]/ }
 
   attr_accessor :password
 
