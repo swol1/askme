@@ -12,8 +12,8 @@
 //
 // https://github.com/rails/sprockets#sprockets-directives
 //
-//= require jquery
-//= require jquery_ujs
+//= require rails-ujs
+//= require activestorage
 //= require_tree .
 
 // Этот код добавляет обработчик события выдвигания формы при клике на кнопку
