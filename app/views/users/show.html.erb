@@ -35,8 +35,14 @@
   </div>
 </div>
 
+<div>
+  <% amount_of_questions = @questions.count %>
+  <p class="text-lead buffer-top" style="color: white"><%= "#{amount_of_questions} #{sklonenie(@questions.count, "Вопрос", "Вопроса", "Вопросов")}" %></p>
+</div>
+
 <div class="column-3-4">
   <div class="user-questions buffer-both">
+
     <div class="questions-list">
       <% @questions.each do |question| %>
         <%= render partial: 'questions/question', object: question %>
