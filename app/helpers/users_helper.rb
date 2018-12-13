@@ -6,4 +6,19 @@ module UsersHelper
       asset_path 'avatar.jpg'
     end
   end
+
+  def colors
+    { "Чёрный" => "#000000",
+      "Оранжевый" => "#ffa500",
+      "Синий" => "42aaff",
+      "Зеленый" => "#008000",
+      "Фиолетовый" => "#8b00ff",
+      "Жёлтый" => "#ffff00",
+      "Белый" => "ffffff"
+    }
+  end
+
+  def color_list
+    colors.each_key { |color| color }
+  end
 end

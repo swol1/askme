@@ -20,10 +20,6 @@ class User < ApplicationRecord
   before_save :encrypt_password
   before_validation :user_downcase
 
-  def background_color(user_choice)
-    s
-  end
-
   def user_downcase
     username.downcase!
   end

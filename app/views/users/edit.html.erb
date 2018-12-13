@@ -14,6 +14,11 @@
       <% end %>
 
       <div class="form-field">
+        <%= f.label 'Выбрать цвет фона', class: 'form-label' %>
+        <%= f.select :user_background, color_list, class: 'form-text-field', :include_blank => true %>
+      </div>
+
+      <div class="form-field">
         <%= f.label :username, class: 'form-label' %>
         <%= f.text_field :username, class: 'form-text-field' %>
       </div>
@@ -49,7 +54,7 @@
 
     <div class="buffer-both">
       <%= link_to "Удалить аккаунт", @user, method: :delete,
-                                  data: { confirm: "Вы уверены, что хотите удалить аккаунт?" } %>
+                  data: { confirm: "Вы уверены, что хотите удалить аккаунт?" } %>
     </div>
   </div>
 </div>
