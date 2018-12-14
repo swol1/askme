@@ -1,5 +1,4 @@
-<%= content_tag :div, class: ["user-header", "text-center"], style: ["background: #{@user.user_background}"] do %>
-
+<div class="text-center user-header" style="background: <%= @user.user_background %>" >
 <h1 class="title-medium">
     <%= @user.name %>
   </h1>
@@ -15,7 +14,7 @@
   <h2 class="title-small buffer-both">
     @<%= @user.username %>
   </h2>
-<% end %>
+</div>
 
 <div class="user-details">
   <div class="user-ask-button container text-center">
