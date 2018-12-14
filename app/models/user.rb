@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A[\w\d]+[\w\d.]+@[\w\d]+\.[\w]+/ }
   validates :username, length: { maximum: 40 }
   validates :username, format: { with: /\A[\w]+\z/ }
+  validates :user_background, inclusion: { in: %w(#2e2f41 #000000 #ffa500 #008000 #42aaff #8b00ff #ffff00 #ff0000) }
 
   attr_accessor :password
 
