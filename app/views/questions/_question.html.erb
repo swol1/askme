@@ -1,7 +1,14 @@
 <div class="question">
   <div class="question-content">
+
     <div class="question-text text-lead">
       <%= question.text %>
+    </div>
+
+    <div class="question-text text-medium">
+      <% unless question.author == nil %>
+        <%= link_to "@#{question.author.username}", user_path(question.author) if question.author %>
+      <% end %>
     </div>
 
     <% if question.answer.present? %>
