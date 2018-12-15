@@ -34,5 +34,4 @@ ActiveRecord::Schema.define(version: 2018_12_14_163608) do
     t.string "avatar_url"
     t.string "user_background"
   end
-
 end
