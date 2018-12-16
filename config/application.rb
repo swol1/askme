@@ -36,5 +36,7 @@ module Askme
     config.i18n.locale = :ru
 
     config.i18n.fallbacks = [:en]
+
+    config.assets.enabled = true
   end
 end
