@@ -5,7 +5,7 @@
       <%= question.text %>
     </div>
 
-    <% unless question.author == nil %>
+    <% if question.author.present? %>
       <div class="question-text text-medium">
         <%= link_to "@#{question.author.username}", user_path(question.author) if question.author %>
       </div>
