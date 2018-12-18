@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :username, length: { maximum: 40 }
   validates :username, format: { with: /\A[\w]+\z/ }
   validates :user_background, format: { with: /\A#+[a-zA-Z\d]+\z/}, length: { is: 7 }, allow_blank: true
+  validates :avatar_url, format: { with: /https?:\/\/[\S]+/}, allow_blank: true
 
   attr_accessor :password
 
