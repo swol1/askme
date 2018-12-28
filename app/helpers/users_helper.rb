@@ -10,13 +10,10 @@ module UsersHelper
   def color_list
     colors = {
       "Стандартный" => "#2e2f41",
-      "Чёрный" => "#000000",
-      "Оранжевый" => "#ffa500",
-      "Синий" => "#42aaff",
-      "Зеленый" => "#008000",
-      "Фиолетовый" => "#8b00ff",
-      "Жёлтый" => "#ffff00",
-      "Красный" => "#ff0000"
+      "OrangeRed" => "#CD4929",
+      "Aqua" => "#00C6C1",
+      "PaleVioletRed" => "#A15C73",
+      "Navy" => "#383C57",
     }
     colors.each_key { |color| color }
   end

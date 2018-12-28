@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_163608) do
+ActiveRecord::Schema.define(version: 2018_12_28_002115) do
+
+  create_table "hashtags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "questions", force: :cascade do |t|
     t.string "text"
@@ -21,6 +27,13 @@ ActiveRecord::Schema.define(version: 2018_12_14_163608) do
     t.integer "author_id"
     t.index ["author_id"], name: "index_questions_on_author_id"
     t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
+  create_table "questions_hashtags", id: false, force: :cascade do |t|
+    t.integer "question_id"
+    t.integer "hashtag_id"
+    t.index ["hashtag_id"], name: "index_questions_hashtags_on_hashtag_id"
+    t.index ["question_id"], name: "index_questions_hashtags_on_question_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,4 +47,5 @@ ActiveRecord::Schema.define(version: 2018_12_14_163608) do
     t.string "avatar_url"
     t.string "user_background"
   end
+
 end
