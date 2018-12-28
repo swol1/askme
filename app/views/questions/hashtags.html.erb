@@ -1,0 +1,13 @@
+<div class="content-wrapper buffer-both">
+  <div class="text-lead">
+    Вот все вопросы с этим хештегом
+  </div>
+
+  <div class="user-questions buffer-both">
+    <div class="questions-list">
+      <% @questions.each do |question| %>
+        <%= render partial: 'question', object: question %>
+      <% end %>
+    </div>
+  </div>
+</div>

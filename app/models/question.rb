@@ -7,11 +7,30 @@ class Question < ApplicationRecord
   validates :text, length: { maximum: 255 }
 
   after_create do
-    question = Question.find_by(id: self.id)
-    tags = self.text.scan(/#+[[\w]-]+/)
+    text_field
+    answer_field unless self.answer.nil?
+  end
+
+  before_update do
+    self.hashtags.clear
+    text_field
+    answer_field unless self.answer.nil?
+  end
+
+  def text_field
+    tags = self.text.scan(/#+[[[:word:]]-]+/)
+    fields_scan(tags)
+  end
+
+  def answer_field
+    tags = self.answer.scan(/#+[[[:word:]]-]+/)
+    fields_scan(tags)
+  end
+
+  def fields_scan(tags)
     tags.uniq.map do |tag|
       hashtag = Hashtag.find_or_create_by(name: tag.downcase.delete('#'))
-      question.hashtags << hashtag
+      self.hashtags << hashtag
     end
   end
 end

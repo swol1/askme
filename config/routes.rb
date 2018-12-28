@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'show' => 'users#show'
 
+  get 'hashtag/:name', to: 'questions#hashtags', as: 'hashtag'
+
   get 'sign_up' => 'users#new'
   get 'log_out' => 'sessions#destroy'
   get 'log_in' => 'sessions#new'

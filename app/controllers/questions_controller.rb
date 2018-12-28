@@ -1,9 +1,14 @@
 class QuestionsController < ApplicationController
   before_action :load_question, only: [:show, :edit, :update, :destroy]
 
-  before_action :authorize_user, except: [:create]
+  before_action :authorize_user, except: [:create, :hashtags]
 
   def edit
+  end
+
+  def hashtags
+    hashtag = Hashtag.find_by(name: params[:name])
+    @questions = hashtag.questions
   end
 
   def create
@@ -45,7 +50,7 @@ class QuestionsController < ApplicationController
   def question_params
     if current_user.present? &&
       params[:question][:user_id].to_i == current_user.id
-      params.require(:question).permit(:user_id, :text, :answer, :hashtags)
+      params.require(:question).permit(:user_id, :text, :answer)
     else
       @question.answer = nil if @question
       params.require(:question).permit(:user_id, :text)

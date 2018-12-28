@@ -22,6 +22,12 @@
     </div>
   </div>
 
+  <div class="text-medium margin-left-7">
+    <% question.hashtags.uniq.map do |hashtag| %>
+      <%= link_to "##{hashtag.name}", hashtag_path(hashtag.name) %>
+    <% end %>
+  </div>
+
   <% if question.user == current_user %>
     <% edit_icon = question.answer.blank? ? 'reply' : 'pencil' %>
 
