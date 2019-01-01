@@ -1,5 +1,15 @@
 module QuestionsHelper
   def all_hashtags
-    Hashtag.all.order(updated_at: :desc)
+    hashtags = []
+
+    questions = Question.all.order(updated_at: :desc)
+
+    questions.each do |question|
+      question.hashtags.each do |hashtag|
+        hashtags << hashtag.name
+      end
+    end
+
+    hashtags.uniq!
   end
 end
