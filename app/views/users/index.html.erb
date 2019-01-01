@@ -15,7 +15,7 @@
 <div class="content-wrapper buffer-both text-center">
   <div class="text-medium">
     <% all_hashtags.each do |hashtag| %>
-      <%= link_to "##{hashtag}", hashtag_path(hashtag) %>
+      <%= link_to "##{hashtag.name}", hashtag_path(hashtag.name) if hashtag.questions.present? %>
     <% end %>
   </div>
 </div>
