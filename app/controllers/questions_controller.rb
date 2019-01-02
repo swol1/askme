@@ -1,14 +1,9 @@
 class QuestionsController < ApplicationController
   before_action :load_question, only: [:show, :edit, :update, :destroy]
 
-  before_action :authorize_user, except: [:create, :hashtags]
+  before_action :authorize_user, except: [:create]
 
   def edit
-  end
-
-  def hashtags
-    hashtag = Hashtag.find_by(name: params[:name])
-    @questions = hashtag.questions
   end
 
   def create
