@@ -3,16 +3,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'bootsnap', '>= 1.1.0', require: false
+
+gem 'jbuilder', '~> 2.5'
+
 gem 'rails', '~> 5.2.1'
 
 gem 'rails_12factor'
 
-gem 'uglifier', '>= 1.3.0'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'recaptcha', require: "recaptcha/rails"
 
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'uglifier', '>= 1.3.0'
 
 group :production do
   gem 'pg'
