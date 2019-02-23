@@ -1,24 +1,32 @@
-# README
+## Askme
+Приложение - клон сайта ask.fm
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Веб-приложение с помощью которого можно задавать пользователям любые вопросы и отвечать на вопросы, заданные Вам.
 
-Things you may want to cover:
+## Демо
+qaska.herokuapp.com
 
-* Ruby version
+## Детали
+`ruby 2.5.1`
 
-* System dependencies
+`rails 5.2.1`
 
-* Configuration
+В приложении используется Recaptcha, кастомная авторизация, REST routes. Также реализован функционал #хештегов.
 
-* Database creation
+Приложение полностью готово к деплою на heroku
 
-* Database initialization
+## Установка
+Склонируйте данный гит репозиторий с сайта, либо в консоли введите `git clone <link_to_this_repo>`
 
-* How to run the test suite
+В консоли, в папке с приложением, введите `bundle install` (у Вас должен быть установлен `bundler`)
 
-* Services (job queues, cache servers, search engines, etc.)
+Введите `rails s`. На локальном хосте `localhost:3000` будет доступно для использования данное приложение
 
-* Deployment instructions
+Для деплоя на хероку, смотрите инструкцию на их сайте
 
-* ...
+
+
+
+
+
+
