@@ -24,8 +24,12 @@
   margin-top: 40px;
 }
 
-.margin-left-7 {
-  margin-left: 7px;
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+.less-margin-top {
+  margin-top: -10px;
 }
 
 .container {

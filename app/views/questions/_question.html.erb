@@ -6,8 +6,8 @@
     </div>
 
     <% if question.author.present? %>
-      <div class="question-text text-medium">
-        <%= link_to "@#{question.author.username}", user_path(question.author) if question.author %>
+      <div class="question-text text-medium less-margin-top">
+        <%= link_to "- @#{question.author.username}", user_path(question.author) if question.author %>
       </div>
     <% end %>
 
@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <div class="text-medium margin-left-7">
+  <div class="text-medium margin-left-15 less-margin-top">
     <% question.hashtags.uniq.map do |hashtag| %>
       <%= link_to "##{hashtag.name}", hashtag_path(hashtag.name) %>
     <% end %>
