@@ -6,6 +6,13 @@
 ## Демо
 http://qaska.herokuapp.com
 
+## Стек
+* Ruby 2.5.1
+
+* Rails 5.2.1
+
+* [Recaptcha](https://github.com/ambethia/recaptcha)
+
 ## Установка
 
 У Вас должен быть установлен bundler
@@ -33,14 +40,12 @@ bundle exec rails s
 Для деплоя на хероку, смотрите инструкцию на их сайте
 
 ## Детали
-* Ruby 2.5.1
-
-* Rails 5.2.1
-
 В приложении используется Recaptcha, кастомная авторизация, REST routes. Также реализован функционал #хештегов.
 
 Приложение полностью готово к деплою на heroku
 
+## Автор
+[Denis Gavrilin](https://github.com/swol1)
 
 
 
